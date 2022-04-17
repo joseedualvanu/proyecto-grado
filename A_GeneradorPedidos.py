@@ -61,6 +61,7 @@ def generadorpedidos(archivo_pedidos_1,archivo_pedidos_2,CantPedidosInput,CP,CB)
         porcentajePickup = 100 - porcentajeDelivery
 
        # TipoPedido = random.randint(1,2)
+       # Es delivery o pick up de forma aleatoria
         TipoPedidoList = random.choices([1,2] , weights=[porcentajeDelivery,porcentajePickup] , k= 1)
         TipoPedido = TipoPedidoList[0]
 

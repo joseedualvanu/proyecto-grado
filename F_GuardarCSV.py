@@ -3,8 +3,8 @@ def guardarcsv(resultado,archivo_resultado):
     Description:
         Se guarda el resultado de un archivo csv
     Args:
-        resultado ():
-        archivo_resultado ():
+        resultado (dict): pedido (key) vs bloque elegido
+        archivo_resultado (string): nombre del archivo que va a tener el resultado
     Returns:
         --
     Error:

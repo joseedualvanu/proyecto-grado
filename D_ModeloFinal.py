@@ -10,7 +10,7 @@ def modelo(CPBCP,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,TP,Lista_Pedido
         Cant_Codigos_Postales (integer): cantidad de códigos postales únicos
         TP (list): lista de pedidos y sus tipos
         Lista_Pedidos_CodPostales_Aux (list): lista con todos los códigos postales (puede existir repetidos)
-        Lista_Pedidos_k (list): lista con el indice del código postal correspondiente a cada pedido
+        Lista_Pedidos_k (list): lista con el i ndice del código postal correspondiente a cada pedido
         P (float): parámetro que relaciona beneficio del cubo contra la clusterizacion por distancias en la función objetivo
         D (list): lista únicamente con las distancias de los CP de los pedidos de la ejecucion
         Capacidad (integer): capacidad de pedido por bloque

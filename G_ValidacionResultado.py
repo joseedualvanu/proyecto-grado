@@ -3,11 +3,11 @@ def validacion(Lista_Datos_Iniciales,resultado):
     Description:
 
     Args:
-        Lista_Datos_Iniciales ():
-        resultado ():
+        Lista_Datos_Iniciales (list): lista con la informacion de los pedidos
+        resultado (dict): pedido (key) vs bloque elegido
     Returns:
-        resultadoValidacion ():
-        conteoValidacion ():
+        resultadoValidacion (dict): numero de orden (key) vs cumplio o no
+        conteoValidacion (dict): cumplen, no cumplen, total, %cumplimiento (keys) vs valores
     Error:
         --
     Note:

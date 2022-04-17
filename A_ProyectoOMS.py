@@ -5,7 +5,7 @@ MODULO A
     Args:
 		--
     Returns:
-
+        --
     Error:
         --
     Note:
@@ -28,7 +28,7 @@ second = start_time2.second
 name_aux = str(day)+str(month)+str(year)+'_'+str(hour)+'\''+str(minute)+'\''+str(second)
 
 # Parametros necesarios para las pruebas
-fila = 999
+fila = 250
 
 # Numero de prueba
 n = "S" + str(fila)
@@ -74,8 +74,8 @@ MODULO Auxiliar
     Se generan aleatoriamente los archivos necesarios
     Pedido_BE y Pedido_PCP
 """
-##from A_GeneradorPedidos import generadorpedidos
-##generadorpedidos(archivo_pedidos_1,archivo_pedidos_2,CantPedidosInput,CP,CB)
+from A_GeneradorPedidos import generadorpedidos
+generadorpedidos(archivo_pedidos_1,archivo_pedidos_2,CantPedidosInput,CP,CB)
 
 """
 MODULO B
@@ -93,7 +93,7 @@ MODULO C
     Sus filas sumen 10
 """
 from C_Regularizador_cubo import regularizador_cubo
-(CPBCP,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,Lista_Pedidos_CodPostales_Aux,Lista_Pedidos_CodPostales_Unicos,Lista_Pedidos_k,D , APuntaje) = regularizador_cubo(BE, Peso1, Peso2, archivo_pedidos_2,Lista_Distancias)
+(CPBCP,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,Lista_Pedidos_CodPostales_Aux,Lista_Pedidos_CodPostales_Unicos,Lista_Pedidos_k,D , APuntaje,MPCP) = regularizador_cubo(BE, Peso1, Peso2, archivo_pedidos_2,Lista_Distancias)
 
 """
 MODULO D

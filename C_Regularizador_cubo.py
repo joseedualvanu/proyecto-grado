@@ -19,6 +19,7 @@ def regularizador_cubo(BE,Peso1,Peso2,archivo_pedidos_2,Lista_Distancias):
         Lista_Pedidos_k (list): lista con el indice del código postal correspondiente a cada pedido
         D (list): lista únicamente con las distancias de los CP de los pedidos de la ejecucion
         APuntaje (list): lista con las operaciones que luego se suma a BE, se utiliza para verificar solamente
+        MPCP (3Darray): matriz de pedidos vs codigos postales
 
     Error:
         --
@@ -67,7 +68,7 @@ def regularizador_cubo(BE,Peso1,Peso2,archivo_pedidos_2,Lista_Distancias):
         # Recorro primeras columnas para agregar la ponderación
         for j in range(ultimacolumn+1,Cant_Bloques):
                 #columnas - j para darle mas importancia a las cercanas
-                APuntaje[i][j] = round(Peso2*(Cant_Bloques-j)/largo,2)
+                APuntaje[i][j] = round(Peso2*(Cant_Bloques - j)/largo,2)
 
     # Pasos para normalizar matriz A
     # Creo una matriz auxiliar para sacar la primer fila y columna con valores cero
@@ -201,4 +202,4 @@ def regularizador_cubo(BE,Peso1,Peso2,archivo_pedidos_2,Lista_Distancias):
 
         D.append(Lista_Distancias[1][index])
 
-    return CPBCP,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,Lista_Pedidos_CodPostales_Aux,Lista_Pedidos_CodPostales_Unicos, Lista_Pedidos_k,D,APuntaje
+    return CPBCP,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,Lista_Pedidos_CodPostales_Aux,Lista_Pedidos_CodPostales_Unicos, Lista_Pedidos_k,D,APuntaje,MPCP

@@ -4,20 +4,20 @@ def resultado(X,A,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,CPBCP,Lista_Pe
         Procesar el output del modelo.
         Se realiza un conteo y se clasifica.
     Args:
-        X ():
-        A ():
-        Cant_Pedidos ():
-        Cant_Bloques ():
-        Cant_Codigos_Postales ():
-        CPBCP ():
-        Lista_Pedidos_CodPostales_Aux ():
-        MO ():
+        X (pulp dict 3D binary): variable de asignacion del pedido i al bloque j y codigo postal k X_ijk
+        A (pulp dict 2D binary): variable de asignacion de bloque j al codigo postal k A_jk
+        Cant_Pedidos (int): cantidad de pedidos total
+        Cant_Bloques (int): cantidad de bloques como opcion
+        Cant_Codigos_Postales (int): cantidad de codigos postales de los pedidos
+        CPBCP (3Darray): array con los puntajes asociado para la terna pedido, bloque y codigo postal
+        Lista_Pedidos_CodPostales_Aux (list): lista con todos los códigos postales (puede existir repetidos)
+        MO (integer): Capacidad de armado de pedidos por bloque por persona
     Returns:
-        resultado ():
-        resultadoPorBloque ():
-        resultadoCPBloque ():
-        resultadoBloqueMO ():
-        contTotal ():
+        resultado (dict): pedido (key) vs bloque elegido
+        resultadoPorBloque (dict): bloque (key) vs cantidad de pedidos en el bloque
+        resultadoCPBloque (dict): bloque (key) vs cantidad de codigos postales en el bloque
+        resultadoBloqueMO (dict): bloque (key) vs cantidad de personas necesarias para el bloque
+        contTotal (int): cantidad de codigos postales recorridos en el dia
     Error:
         --
     Note:
@@ -32,6 +32,8 @@ def resultado(X,A,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,CPBCP,Lista_Pe
     resultado = dict()
     resultadoCPBloque = dict()
     resultadoBloqueMO = dict()
+    #Se crea un dictionario para guardar los resultados por Bloque
+    resultadoPorBloque = dict()
 
     for i in iR:
         for j in jR:
@@ -40,9 +42,6 @@ def resultado(X,A,Cant_Pedidos,Cant_Bloques,Cant_Codigos_Postales,CPBCP,Lista_Pe
                     #print('Pedido ' + str(i) + ' va al bloque ' + str(j) + ' y codigo postal ' + str(k) + ' - CP dato ' + Lista_Pedidos_CodPostales_Aux[i] )
                     Id_Pedido = int(CPBCP[i][0][0])
                     resultado[Id_Pedido] = j
-
-    #Se crea un dictionario para guardar los resultados por Bloque
-    resultadoPorBloque = dict()
 
     #Recorrida para generar cantidad de pedidos por bloque
     for j in jR:
